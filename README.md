@@ -11,8 +11,15 @@ Project ini nantinya berfungsi untuk mencatat peminjaman alat PHS.
 ## How to run this project
 ```
 cd project_dir
+# pull from repo first
+git pull
+# install any new package (if any)
+pip install -r requirements.txt
+# activate the virtual environment
 . bin/activate
-atau kalo di windows
+# atau kalo di windows
+Set-ExecutionPolicy Unrestricted -Scope Process
 Scripts\activate
+# run flask server with debug mode On
 flask --app .app/views.py --debug run
 ```
