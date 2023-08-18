@@ -3,3 +3,4 @@ bin/
 lib/
 Scripts/
 Lib/
+__pycache__/
