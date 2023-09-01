@@ -38,6 +38,8 @@ $ Set-ExecutionPolicy Unrestricted -Scope Process
 $ Scripts\activate
 # run flask server with debug mode On
 $ flask --app .app/views.py --debug run
+# or if you prefer using gunicorn
+$ gunicorn app.views:app
 ```
 
 ## Reference
