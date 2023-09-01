@@ -42,6 +42,18 @@ $ flask --app .app/views.py --debug run
 $ gunicorn app.views:app
 ```
 
+# heroku
+```
+1. install heroku
+curl https://cli-assets.heroku.com/install.sh | sh
+2. heroku login
+heroku login
+3. set git remote
+heroku git:remote -a lendlink-project 
+4. update to heroku repo
+git push heroku main
+```
+
 ## Reference
 - Flask Login Tuts: https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
 - Flask Login Github: https://github.com/maxcountryman/flask-login
