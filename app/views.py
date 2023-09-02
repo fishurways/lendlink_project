@@ -14,7 +14,13 @@ def index():
 
 @app.route("/login")
 def login():
+    '''This is for login page.'''
     return render_template("login.html")
+
+@app.route("/register")
+def register():
+    '''This is for register page.'''
+    return render_template("register.html")
 
 @app.route("/testingrandom")
 def testingrandom():
