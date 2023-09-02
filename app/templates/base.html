@@ -59,6 +59,8 @@
         {% block content %}{% endblock %}
         </div>
 
+        {% include "footer.html" %}
+
         {% block scripts %}
             <!-- Optional JavaScript -->
             {{ bootstrap.load_js() }}
