@@ -1,66 +1,67 @@
-{% extends "bootstrap/base.html" %}
-{% block title %} - LendLink{% endblock %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block styles %}
-{{super()}}
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<!-- link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}" -->
-<link rel="icon" href="{{ url_for('.static', filename='img/favicon.ico') }}" type="image/x-icon">
-<style type="text/css">
-    body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        .my-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            margin-top: 100px;
-            color: #99979c;
-            /* text-align: center; */
-            background-color: #2a2730;
-        }
-        .footer-text {
-            padding-left: 50px;
-        }
-    }
-</style>
-{% endblock %}
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
 
-{% block navbar %}
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Banteng</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-                <input type="text" placeholder="Email" class="form-control">
+        <title>{% block title %}{% endblock %} - Project Name</title>
+        {% endblock %}
+    </head>
+    <body>
+        
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
             </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-        </form>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
-{% endblock %}
+          </div>
+        </nav>
 
-{% block content %}
-<!-- Page Content -->
-{% endblock %}
+        <div class="py-5 container">
+        <!-- Your page content -->
+        {% block content %}{% endblock %}
+        </div>
 
-{% block scripts %}
-    <script src="#"></script>
-{{super()}}
-{% endblock %}
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
+</html>
