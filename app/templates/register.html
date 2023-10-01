@@ -4,6 +4,18 @@
 {% block content %}
 <h1>Selamat datang di Web Pinjam Alat PHS Pradita</h1>
 <p>Silakan Login atau Register</p>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+  {% for message in messages %}
+  <li>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+
 <!-- Section: Design Block -->
 <section class=" text-center text-lg-start">
     <style>
@@ -31,22 +43,22 @@
         <div class="col-lg-8">
           <div class="card-body py-5 px-md-5">
   
-            <form>
+            <form action="/register" method="post">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" name="email" id="form2Example1" class="form-control" />
                 <label class="form-label" for="form2Example1">Email address</label>
               </div>
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="text" id="form2Example2" class="form-control" />
+                <input type="text" name="username" id="form2Example2" class="form-control" />
                 <label class="form-label" for="form2Example2">Username</label>
               </div>
 	      
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="form2Example3" class="form-control" />
+                <input type="password" name="password" id="form2Example3" class="form-control" />
                 <label class="form-label" for="form2Example3">Password</label>
               </div>
   
@@ -61,7 +73,7 @@
               </div>
   
               <!-- Submit button -->
-              <button type="button" class="btn btn-primary btn-block mb-4">Submi</button>
+              <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
             </form>
   
           </div>
