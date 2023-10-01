@@ -1,6 +1,17 @@
 #+TITLE: LenkLink Project How To
 #+AUTHOR: fishurways + kholidfu
 
+* Table of Contents                                                     :TOC:
+- [[#requirement][Requirement]]
+- [[#library-needed][Library needed]]
+- [[#fitur][Fitur]]
+  - [[#site-page][Site Page]]
+  - [[#route][Route]]
+  - [[#finishing][Finishing]]
+- [[#cara-run-app][Cara run app]]
+- [[#cara-menambahkan-user][Cara Menambahkan User]]
+- [[#lokasi-db][Lokasi DB]]
+- [[#from-old-docs][From Old Docs]]
 
 * Requirement
 - [ ] sqlite3
@@ -12,7 +23,6 @@
 - flask bootstrap 5
 - sqlite3 for simple dbase
 - or check at requirements.txt
-
 
 * Fitur
 ** Site Page
