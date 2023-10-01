@@ -39,7 +39,7 @@ python -m flask shell
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db, User
 
-new_user = User(username="kholidfu", password=generate_password_hash("123"))
+new_user = User(email="sopier@gmail.com", username="kholidfu", password=generate_password_hash("123")
 db.session.add(new_user)
 db.session.commit()
 #+END_SRC
