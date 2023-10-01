@@ -1,5 +1,5 @@
 from app import app
-from app import User
+from app import User, db
 
 # di sini tempat import built-in library
 import random
@@ -39,10 +39,25 @@ def welcome():
 
 
     
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
     '''This is for register page.'''
+    if request.method == "POST":
+        email = request.form["email"]
+        username = request.form["username"]
+        password = request.form["password"]
+
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash("Username sudah digunakan. Silakan pilih username lain.", "danger")
+        else:
+            new_user = User(email=email, username=username, password=generate_password_hash(password, method="sha256"))
+            db.session.add(new_user)
+            db.session.commit()
+            flash("Registrasi sukses! Silakan login dengan akun baru Anda.", "success")
+            return redirect(url_for("index"))
     return render_template("register.html")
+                            
 
 @app.route("/testingrandom")
 def testingrandom():
