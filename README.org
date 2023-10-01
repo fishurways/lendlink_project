@@ -16,11 +16,17 @@
 - [ ] Edit inventory page
 
 ** Route
-- [ ] index
-- [ ] login
-- [ ] register
+- [X] index
+- [X] login
+- [X] register
 - [ ] users add/edit/delete/view
 - [ ] tools add/edit/delete/view
+
+** Finishing
+- [ ] Homepage
+- [ ] Login page
+- [ ] Register page
+- [ ] Admin page
 
 * Cara run app
 #+BEGIN_SRC sh
