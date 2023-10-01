@@ -1,0 +1,51 @@
+#+TITLE: LenkLink Project How To
+#+AUTHOR: fishurways + kholidfu
+
+
+* Requirement
+- [ ] sqlite3
+- [ ] sqlite3browser
+
+* Fitur
+** Site Page
+- [ ] Homepage
+- [ ] Login page
+- [ ] Register page
+- [ ] Inventory page
+- [ ] Adding inventory page
+- [ ] Edit inventory page
+
+** Route
+- [ ] index
+- [ ] login
+- [ ] register
+- [ ] users add/edit/delete/view
+- [ ] tools add/edit/delete/view
+
+* Cara run app
+#+BEGIN_SRC sh
+cd git/lendlink_project
+. bin/activate
+flask --app app/views.py --debug run
+#+END_SRC
+
+* Cara Menambahkan User
+
+#+BEGIN_SRC sh
+python -m flask shell
+#+END_SRC
+
+#+BEGIN_SRC python
+from werkzeug.security import generate_password_hash, check_password_hash
+from app import db, User
+
+new_user = User(username="kholidfu", password=generate_password_hash("123"))
+db.session.add(new_user)
+db.session.commit()
+#+END_SRC
+
+* Lokasi DB
+
+#+BEGIN_SRC text
+~/git/lendlink_project/var/app-instance/users.db
+#+END_SRC
